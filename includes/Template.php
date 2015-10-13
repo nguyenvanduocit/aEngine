@@ -10,11 +10,20 @@ namespace AEngine;
 
 
 use AEngine\Abstracts\Singleton;
-use DoctrineTest\InstantiatorTestAsset\ExceptionAsset;
 
 class Template extends Singleton{
+	/** @var  string */
 	protected $FILE;
+	/** @var  string */
 	protected $DIR;
+
+	/**
+	 * Template constructor.
+	 *
+	 * @param $args
+	 *
+	 * @throws \Exception
+	 */
 	public function __construct($args) {
 		if(!isset($args['FILE'], $args['DIR'])){
 			throw new \Exception('Template constructor nee FILE, and DIR');
@@ -22,9 +31,17 @@ class Template extends Singleton{
 		$this->FILE = $args['FILE'];
 		$this->DIR = $args['DIR'];
 	}
+
+	/**
+	 * @return string
+	 */
 	public function getFILE(){
 		return $this->FILE;
 	}
+
+	/**
+	 * @return string
+	 */
 	public function getDIR(){
 		return $this->DIR;
 	}

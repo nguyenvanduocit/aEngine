@@ -34,7 +34,7 @@ class PostList  implements  ShortcodeInterface{
 	protected  $order;
 
 	/**
-	 * @var category can be completed or active or all
+	 * @var array|string can be completed or active or all
 	 */
 	protected $category;
 
@@ -44,7 +44,7 @@ class PostList  implements  ShortcodeInterface{
 	protected $ids;
 
 	/**
-	 * @var exclude courses by id
+	 * @var array|string courses by id
 	 */
 	protected $exclude;
 	/**
@@ -73,7 +73,7 @@ class PostList  implements  ShortcodeInterface{
 		$this->number = isset( $attributes['number'] ) ? $attributes['number'] : '10';
 		$this->orderby = isset( $attributes['orderby'] ) ? $attributes['orderby'] : 'date';
 		$this->post_type = isset( $attributes['post_type'] ) ? $attributes['post_type'] : 'post';
-		$this->loop_part = isset( $attributes['loop_part'] ) ? $attributes['loop_part'] : 'inc/Shortcode/template';
+		$this->loop_part = isset( $attributes['loop_part'] ) ? $attributes['loop_part'] : 'includes/Shortcode/template';
 		$this->loop_file = isset( $attributes['loop_file'] ) ? $attributes['loop_file'] : 'loop.php';
 		$this->template_args = isset( $attributes['template_args'] ) ? $attributes['template_args'] : array();
 
@@ -154,6 +154,10 @@ class PostList  implements  ShortcodeInterface{
 		wp_reset_query();
 		return $shortcode_output;
 	}
+
+	/**
+	 * You can extend it if want to override
+	 */
 	public function getTemplate(){
 		global $aEngine;
 		$aEngine->Template()->get_template($this->loop_file,$this->template_args, $this->loop_part);

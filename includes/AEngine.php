@@ -17,10 +17,16 @@ final class AEngine extends PluginBase{
 
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getDIR() {
 		return AENGINE_DIR;
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getFILE() {
 		return AENGINE_FILE;
 	}
