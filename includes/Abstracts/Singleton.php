@@ -8,11 +8,16 @@
 
 namespace AEngine\Abstracts;
 
+/**
+ * Class Singleton
+ *
+ * Abstract class for all singleton
+ *
+ * @package AEngine\Abstracts
+ */
 
-class Singleton {
-	protected function __construct()
-	{
-	}
+abstract class Singleton {
+	protected function __construct() {}
 
 	final public static function getInstance()
 	{
@@ -33,7 +38,5 @@ class Singleton {
 		return $instances[$calledClass];
 	}
 
-	final private function __clone()
-	{
-	}
+	final private function __clone() {}
 }

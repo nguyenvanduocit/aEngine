@@ -8,7 +8,13 @@
 
 namespace AEngine\Module;
 
-
+/**
+ * Class FrontModule
+ *
+ * This module type only available on front-end
+ *
+ * @package AEngine\Module
+ */
 abstract class FrontModule extends Base{
 	/**
 	 * @return bool

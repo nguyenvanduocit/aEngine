@@ -8,6 +8,13 @@
 
 namespace AEngine\Module;
 
+/**
+ * Class Base
+ *
+ * Base of all module
+ *
+ * @package AEngine\Module
+ */
 
 abstract class Base {
 	/**

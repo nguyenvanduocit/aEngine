@@ -8,6 +8,13 @@
 
 namespace AEngine\Module;
 
+/**
+ * Class BackModule
+ *
+ * This module only available for backend
+ *
+ * @package AEngine\Module
+ */
 
 abstract class BackModule extends Base{
 	/**
