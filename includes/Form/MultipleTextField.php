@@ -30,10 +30,13 @@ class MultipleTextField extends FormField{
 	protected function _set_value( &$args, $value ) {
 		$args['value'] = maybe_serialize($value);
 	}
+
 	/**
 	 * The actual rendering.
 	 *
 	 * @param array $args
+	 *
+	 * @return string
 	 */
 	protected function _render( $args ) {
 		$args   = wp_parse_args( $args,
