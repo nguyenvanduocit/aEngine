@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     $baseDir . '/includes/Schedule/action-scheduler/action-scheduler.php',
+    $baseDir . '/includes/alias-functions.php',
 );

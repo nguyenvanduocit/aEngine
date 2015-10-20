@@ -22,7 +22,7 @@ abstract class FormField implements FormFieldInterface{
 	 * @return mixed false on failure or instance of form class
 	 */
 	public static function create( $args ) {
-		if ( is_a( $args, 'scbFormField_I' ) ) {
+		if ( is_a( $args, '\AEngine\Form\FormFieldInterface' ) ) {
 			return $args;
 		}
 

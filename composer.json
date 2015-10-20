@@ -8,7 +8,8 @@
             "AEngine\\": "includes/"
         },
         "files":[
-            "includes/Schedule/action-scheduler/action-scheduler.php"
+            "includes/Schedule/action-scheduler/action-scheduler.php",
+            "includes/alias-functions.php"
         ]
     },
     "require-dev": {

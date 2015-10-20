@@ -47,6 +47,12 @@ class Option {
 			Util::add_activation_hook( $pluginFile, array( $this, '_activation' ) );
 			Util::add_uninstall_hook( $pluginFile, array( $this, 'delete' ) );
 		}
+		add_action('ae_get_option', array($this, 'get'), 10, 2);
+		add_action('ae_set_option', array($this, 'set'), 10, 2);
+		add_action('set_default_option', array($this, 'set_default'), 10, 2);
+	}
+	public function set_default($key, $value){
+		$this->defaults[$key] = $value;
 	}
 	/**
 	 * Returns option name.
