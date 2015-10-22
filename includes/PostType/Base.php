@@ -19,6 +19,7 @@ abstract class Base {
 	protected $terms;
 	protected $args;
 	protected $hierarchical = false;
+	protected $description;
 	abstract function init();
 
 	public function registerPostType(){
@@ -38,7 +39,8 @@ abstract class Base {
 			'has_archive' => true,
 			'hierarchical' => $this->hierarchical,
 			'menu_position' => 51,
-			'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail','comments')
+			'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail','comments'),
+			'description'=>$this->getDescription()
 		);
 		if($this->getTerms()){
 			$args['taxonomies'] = $this->getTerms();
@@ -219,5 +221,19 @@ abstract class Base {
 			}
 		}
 		return '';
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getDescription() {
+		return $this->description;
+	}
+
+	/**
+	 * @param mixed $description
+	 */
+	public function setDescription( $description ) {
+		$this->description = $description;
 	}
 }
