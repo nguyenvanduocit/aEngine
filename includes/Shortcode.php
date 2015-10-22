@@ -13,7 +13,9 @@ use AEngine\Abstracts\Singleton;
 class Shortcode extends Singleton{
 	protected $shortcode_classes;
 	public function __construct(){
-		$this->shortcode_classes = apply_filters('aengine_shortcode_map',array());
+		$this->shortcode_classes = apply_filters('aengine_shortcode_map',array(
+			'\AEngine\Shortcode\PostList'
+		));
 	}
 	public function init(){
 		/**
@@ -36,7 +38,7 @@ class Shortcode extends Singleton{
 	 *
 	 * @param $attributes
 	 * @param $content
-	 * @param $code the shortcode that is being requested
+	 * @param $code z` shortcode that is being requested
 	 *
 	 * @return string
 	 */
