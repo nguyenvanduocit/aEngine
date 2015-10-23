@@ -14,6 +14,7 @@ define('AENGINE_VERSION', '1.0.1');
 define('AENGINE_FILE', __FILE__);
 define('AENGINE_DIR', __DIR__);
 define('AENGINE_DOMAIN', 'aEngine');
+define('AENGINE_URL', plugin_dir_url(AENGINE_FILE));
 
 require_once AENGINE_DIR.'/vendor/autoload.php';
 

@@ -14,9 +14,15 @@ final class AEngine extends PluginBase{
 	 * Run the plugin
 	 */
 	public function run(){
-
+		$this->Front()->init();
 	}
 
+	/**
+	 * @return \AEngine\Front
+	 */
+	public function Front(){
+		return Front::getInstance();
+	}
 	/**
 	 * @return string
 	 */

@@ -222,7 +222,12 @@ abstract class Base {
 		}
 		return '';
 	}
-
+	public function populate($post){
+		if(is_numeric($post)){
+			$post = get_post($post);
+		}
+		return $post;
+	}
 	/**
 	 * @return mixed
 	 */

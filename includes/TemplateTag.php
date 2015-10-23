@@ -20,4 +20,10 @@ class TemplateTag extends Singleton{
 		}
 		return wp_get_attachment_url( get_post_thumbnail_id($postId) );
 	}
+	public static function the_post_meta($meta_key, $postId = null){
+		if($postId == null){
+			$postId = get_the_ID();
+		}
+		return get_post_meta($postId, $meta_key, true);
+	}
 }

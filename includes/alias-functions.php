@@ -14,3 +14,13 @@ function ae_set_option($key, $value){
 function ae_set_default_option($key, $value){
 	return apply_filters('set_default_option', $key, $value);
 }
+function ae_the_post_meta($meta_key, $default = ''){
+	echo ae_get_post_meta($meta_key, $default);
+}
+function ae_get_post_meta($meta_key, $default = ''){
+	$value = \AEngine\TemplateTag::the_post_meta($meta_key);
+	if(!$value){
+		return $default;
+	}
+	return $value;
+}
