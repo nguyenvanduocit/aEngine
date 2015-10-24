@@ -71,6 +71,8 @@ abstract class FormField implements FormFieldInterface{
 				return new RangeField($args);
 			case 'multiple_text':
 				return new MultipleTextField( $args );
+			case 'gallery':
+				return new GalleryField( $args );
 			case 'custom':
 				return new CustomField( $args );
 			default:
