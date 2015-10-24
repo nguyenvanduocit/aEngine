@@ -17,6 +17,7 @@ abstract class Base {
 	protected $slug;
 	protected $meta_fields;
 	protected $terms;
+	protected $populatedFields = array();
 	protected $args;
 	protected $hierarchical = false;
 	protected $description;
@@ -222,9 +223,27 @@ abstract class Base {
 		}
 		return '';
 	}
-	public function populate($post){
+
+	public function populate($post, $fields = array()){
 		if(is_numeric($post)){
 			$post = get_post($post);
+		}
+		$fields = array_flip(array_merge($fields, $this->populatedFields));
+		if(!$post){
+			return new \WP_Error('Post not found');
+		}
+		foreach($this->meta_fields as $key => $field){
+			$value = get_post_meta($post->ID, $field['name'], true);
+			if($value){
+				$post->$field['name'] = $value;
+			}
+		}
+		$terms = wp_get_post_terms( $post->ID, $this->terms, array("fields" => "all") );
+		$post->taxonomies = $terms;
+		/** @var array $post */
+		$post = (array)$post;
+		if(count($fields) > 0){
+			$post  = array_intersect_key( $post, $fields );
 		}
 		return $post;
 	}

@@ -1,7 +1,10 @@
 var AEngine = AEngine || {};
 
-(function (AEngine, Backbone, _) {
+(function (AEngine, Backbone, _, $) {
     'use strict';
+    AEngine.View = {};
+    AEngine.Model={};
+    AEngine.Collection={};
     /**
      * Module define
      * @type {{}}
@@ -34,4 +37,8 @@ var AEngine = AEngine || {};
             console.log('History Start', options);
         }
     });
-})(AEngine, Backbone, _);
+
+    $( document ).ready(function() {
+        AEngine.Event.trigger('document:ready');
+    });
+})(AEngine, Backbone, _, jQuery);
