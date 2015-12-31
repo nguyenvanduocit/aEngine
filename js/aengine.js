@@ -10,6 +10,8 @@ var AEngine = AEngine || {};
      * @type {{}}
      */
     AEngine.Module = {};
+    AEngine.View = {};
+    AEngine.Collection = {};
     /**
      * Event define
      * @type Backbone.Events

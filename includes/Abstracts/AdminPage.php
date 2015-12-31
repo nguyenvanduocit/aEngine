@@ -107,10 +107,10 @@ abstract class AdminPage {
 	/**
 	 * Constructor.
 	 *
-	 * @param string|bool $file (optional)
-	 * @param object $options (optional) A scbOptions object.
+	 * @param string|bool $file    (optional)
+	 * @param object      $options (optional) A scbOptions object.
 	 *
-	 * @return void
+	 * @throws \Exception
 	 */
 	public function __construct( $file = false, $options = null ) {
 		if ( is_a( $options, '\AEngine\Option' ) ) {
