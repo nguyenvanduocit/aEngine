@@ -15,7 +15,7 @@ class PostType extends Singleton{
 	/** @var  \AEngine\PostType\Base[] */
 	protected $postTypes;
 
-	protected function loadPostType($load_posttypes){
+	public function loadPostType($load_posttypes){
 		$load_posttypes = apply_filters( 'aengine_posttypes', $load_posttypes );
 		// Get sort order option
 		// Load gateways in order
