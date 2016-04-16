@@ -2,6 +2,10 @@
 
 This is the simple theme/plugin framework I use for some theme and plugin.
 
+# Installation
+
+`composer install`
+
 # Build with aEngine
 
 * [ActiveBox](https://github.com/nguyenvanduocit/ActiveBox/)
